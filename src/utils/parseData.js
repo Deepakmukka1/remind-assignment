@@ -36,7 +36,7 @@ export const parseAssignements=(data)=>{
 
         
         let splitdata = data?.split("\t");
-        console.log(splitdata)
+        // console.log(splitdata)
         splitdata = splitdata.filter((eachdata) => {
           return eachdata.length !== 0;
         });
@@ -44,7 +44,7 @@ export const parseAssignements=(data)=>{
         splitdata = splitdata.filter((eachdata) => {
         //   const regex = /(am|pm|AM|PM)/gm;
         const regex = /([1-9]|0[1-9]|1[0-2]):[0-5][0-9] ([AaPp][Mm])$/gm
-        console.log(eachdata.match(regex))
+        // console.log(eachdata.match(regex))
           return eachdata.match(regex) == null;
         });
         // console.log(splitdata)
@@ -74,7 +74,7 @@ export const parseAssignements=(data)=>{
     }
 }
 
-export const makeCalendar=({courseData,success})=>{
+export const makeEvents=({courseData,success})=>{
 
     if(success)
     {
@@ -98,23 +98,28 @@ export const makeCalendar=({courseData,success})=>{
         events.push(event)
         
     }
-    const calendarObject={}
-    ics.createEvents(events, (error, value) => {
-        if (error) {
-          console.log(error)
-          return
-        }
-        calendarObject.calendar=value
-        calendarObject.success=true
-        
-      })
-    return calendarObject
-
-    }
+    return events
+  }
     else
     {
-        throw "Error in creating calendar"
+        throw "Error in creating event"
     }
 
 
 }
+
+export const makeCalendar=(events)=>{
+
+  const calendarObject={}
+  ics.createEvents(events, (error, value) => {
+      if (error) {
+        console.log(error)
+        return
+      }
+      calendarObject.calendar=value
+      calendarObject.success=true
+      
+    })
+  return calendarObject
+
+  }

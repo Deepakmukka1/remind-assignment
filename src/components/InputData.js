@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { parseAssignements , makeCalendar } from "../utils/parseData";
+import { parseAssignements , makeEvents ,makeCalendar } from "../utils/parseData";
 
 const InputData = () => {
   const [inputRawData, setInputRawData] = useState("");
+  const [courseList,setCourseList]=useState([])
 
 
   function downloadCalendar(calendar) {
@@ -18,15 +19,26 @@ const InputData = () => {
   }
 
   const handleSubmit = () => {
-    const parsedData = parseAssignements(inputRawData);
-    const calenderData= makeCalendar(parsedData)
+   
     // console.log(calenderData)
-    downloadCalendar(calenderData.calendar)
+    // downloadCalendar(calenderData.calendar)
+    const {calendar}=makeCalendar(courseList)
+    downloadCalendar(calendar)
     
   };
 
+  const handleCourses=()=>{
+
+    const parsedData = parseAssignements(inputRawData);
+    const eventslist= makeEvents(parsedData)
+    // console.log(courseList)
+    setCourseList([...courseList,...eventslist])
+    setInputRawData("")
+  }
+
   return (
     <div>
+      <p>Hello</p>
       <textarea
         rows="30"
         cols="100"
@@ -43,6 +55,13 @@ const InputData = () => {
         }}
       >
         Submit
+      </button>
+      <button
+        onClick={() => {
+          handleCourses();
+        }}
+      >
+        Add next course
       </button>
     </div>
   );
