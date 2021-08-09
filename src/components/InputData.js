@@ -1,7 +1,6 @@
 import '../App.css'
 import React, { useState } from "react";
 import { parseAssignements , makeEvents ,makeCalendar } from "../utils/parseData";
-import Modal from './Modal';
 
 const InputData = () => {
   const [inputRawData,setInputRawData] = useState("");
