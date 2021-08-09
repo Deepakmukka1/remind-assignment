@@ -1,6 +1,7 @@
 import '../App.css'
 import React, { useState } from "react";
 import { parseAssignements , makeEvents ,makeCalendar } from "../utils/parseData";
+import Instructions from './Instructions';
 
 const InputData = () => {
   const [inputRawData,setInputRawData] = useState("");
@@ -65,8 +66,8 @@ const InputData = () => {
   }
 
   return (
-    <div>
-
+    <div style={{padding:'10px',marginBottom:'30px'}}>
+      <Instructions/>
       <h3>Vtop to Google Calendar</h3>
       <h4 className="success">{success.length > 0 && success }</h4>
       <h4 className="error">{error.length > 0 && error }</h4>
