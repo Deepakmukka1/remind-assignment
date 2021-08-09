@@ -83,8 +83,8 @@ export const makeEvents=({courseData,success})=>{
     for(const assignment in assignments)
     {
 
-        const description=`You have an assignment in 5 days ${courseName} \n ${assignments[assignment].title}`
-        const title=`${courseCode} ${courseName}`
+        const description=`Course Code : ${courseCode} \nYou have an assignment in 5 days \nAssignment : ${assignments[assignment].title}`
+        const title=`${courseName}`
         const {duedate}=assignments[assignment]
         const [year,month,date]=setNewDate(duedate).split('T')[0].split("-")
         // console.log(+date,+month,+year)
