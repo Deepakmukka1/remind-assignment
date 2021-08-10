@@ -17,9 +17,7 @@ const isDate = (date)=> {
 }
   
   const setNewDate=(dates)=>{
-  
-    // console.log(typeof dates,dates)
-    // console.log(isDate(dates))
+
     if(isDate(dates))
     {
     const dateparam=new Date(dates)
