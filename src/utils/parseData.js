@@ -34,7 +34,6 @@ export const parseAssignements=(data)=>{
 
         
         let splitdata = data?.split("\t");
-        // console.log(splitdata)
         splitdata = splitdata.filter((eachdata) => {
           return eachdata.length !== 0;
         });
@@ -42,13 +41,9 @@ export const parseAssignements=(data)=>{
         splitdata = splitdata.filter((eachdata) => {
         //   const regex = /(am|pm|AM|PM)/gm;
         const regex = /([1-9]|0[1-9]|1[0-2]):[0-5][0-9] ([AaPp][Mm])$/gm
-        // console.log(eachdata.match(regex))
           return eachdata.match(regex) == null;
         });
-        // console.log(splitdata)
-        // console.log(splitdata)
         // splitdata.unshift("Semester");
-        // console.log(splitdata)
         if ((splitdata.length - 1) % 5 !== 0) {
       
             throw "Parsing error";
@@ -60,7 +55,6 @@ export const parseAssignements=(data)=>{
           obj.title = splitdata[i + 1];
           obj.marks = splitdata[i + 3];
           obj.duedate = splitdata[i+4];
-          // setNewDate(splitdata[i+4]);
           assignments.push(obj);
         }
         assignments = assignments.slice(3);
@@ -77,15 +71,14 @@ export const makeEvents=({courseData,success})=>{
     if(success)
     {
     const events=[];
-    const {assignments,courseCode,courseName,semester}=courseData
+    const {assignments,courseCode,courseName,courseType,semester}=courseData
     for(const assignment in assignments)
     {
 
-        const description=`Course Code : ${courseCode} \nYou have an assignment in 5 days \nAssignment : ${assignments[assignment].title}`
+        const description=`Course Code : ${courseCode} \nYou have an assignment in 5 days \nAssignment : ${assignments[assignment].title}\nAssignment Type : ${courseType==="ELA"?"Lab":"Theory"}`
         const title=`${courseName}`
         const {duedate}=assignments[assignment]
         const [year,month,date]=setNewDate(duedate).split('T')[0].split("-")
-        // console.log(+date,+month,+year)
         const event = {
             start: [+year, +month, +date, 5, 30], // string to number
             duration: { minutes: 5 },

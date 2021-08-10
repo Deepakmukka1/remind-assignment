@@ -34,7 +34,7 @@ const InputData = () => {
     else
     {
       setSuccess("")
-      setError("Add a course to generate calendar")
+      setError("Add a course and click on submit to generate calendar")
     }
     
   };
@@ -49,14 +49,18 @@ const InputData = () => {
 
         const parsedData = parseAssignements(inputRawData);
         const eventslist= makeEvents(parsedData)
+        const type=eventslist[0].description.split("\n")[3].split(":")[1];
+        console.log(type)
         setCourseList([...courseList,...eventslist])
         setInputRawData("")
         setError("")
-        setSuccess("Course added successfully")
+        setSuccess(`${eventslist[0].title} ${type}  assignments added successfully`)
         // console.log(courseList)
         
       } catch (error) {
 
+        setError("");
+        setSuccess("");
         alert("Something went wrong paste propely")
         setInputRawData("")
         
@@ -69,8 +73,8 @@ const InputData = () => {
     <div style={{padding:'10px',marginBottom:'30px'}}>
       <Instructions/>
       <h3><u>Vtop to Google Calendar</u></h3>
-      <h4 className="success">{success.length > 0 && success }</h4>
-      <h4 className="error">{error.length > 0 && error }</h4>
+      <h5 className="success">{success.length > 0 && success }</h5>
+      <h5 className="error">{error.length > 0 && error }</h5>
       <textarea
         rows="30"
         cols="100"
