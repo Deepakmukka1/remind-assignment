@@ -10,7 +10,7 @@ const Instructions = () => {
                 <li> Repeat step 1 and 2 for as many subjects as you wish</li>
                 <li> Click on submit to get a .ics file</li>
                 <li> Go to your google calendar and import this file</li>
-                <li><a href="https://youtu.be/j9OHpvAdoes" style={{color:'#27ae60'}}> Click here to view demo</a></li>
+                <li><a href="https://youtu.be/j9OHpvAdoes" style={{color:'#27ae60'}} target="_blank"> Click here to view demo</a></li>
                 
             </ol>
         </div>
