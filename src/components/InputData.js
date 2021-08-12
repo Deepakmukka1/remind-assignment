@@ -8,6 +8,7 @@ const InputData = () => {
   const [courseList,setCourseList]=useState([])
   const [success,setSuccess]=useState("")
   const [error,setError]=useState("")
+  const [totalCoursesCount,setTotalCoursesCount]=useState(0)
 
   function downloadCalendar(calendar) {
     const fileName = "calendar.ics";
@@ -50,12 +51,11 @@ const InputData = () => {
         const parsedData = parseAssignements(inputRawData);
         const eventslist= makeEvents(parsedData)
         const type=eventslist[0].description.split("\n")[3].split(":")[1];
-        console.log(type)
         setCourseList([...courseList,...eventslist])
         setInputRawData("")
         setError("")
         setSuccess(`${eventslist[0].title} ${type}  assignments added successfully`)
-        // console.log(courseList)
+        setTotalCoursesCount(totalCoursesCount+1);
         
       } catch (error) {
 
@@ -73,6 +73,7 @@ const InputData = () => {
     <div style={{padding:'10px',marginBottom:'30px'}}>
       <Instructions/>
       <h3><u>Vtop to Google Calendar</u></h3>
+      <h5>Total courses added : {totalCoursesCount}</h5>
       <h5 className="success">{success.length > 0 && success }</h5>
       <h5 className="error">{error.length > 0 && error }</h5>
       <textarea
@@ -107,6 +108,7 @@ const InputData = () => {
           setError("")
           setSuccess("All courses deleted , you can start again")
           setCourseList([]);
+          setTotalCoursesCount(0);
         }}
       >
         Reset 
