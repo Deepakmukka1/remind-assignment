@@ -4,11 +4,12 @@ import { parseAssignements , makeEvents ,makeCalendar } from "../utils/parseData
 import Instructions from './Instructions';
 
 const InputData = () => {
+  
+  const [totalCoursesCount,setTotalCoursesCount]=useState(0)
   const [inputRawData,setInputRawData] = useState("");
   const [courseList,setCourseList]=useState([])
   const [success,setSuccess]=useState("")
   const [error,setError]=useState("")
-  const [totalCoursesCount,setTotalCoursesCount]=useState(0)
 
   function downloadCalendar(calendar) {
     const fileName = "calendar.ics";
@@ -19,7 +20,7 @@ const InputData = () => {
     );
     downloadElement.setAttribute("download", fileName);
     downloadElement.click();
-    // window.open("https://calendar.google.com/calendar");
+    window.open("https://calendar.google.com/calendar");
   }
 
   const handleSubmit = () => {
