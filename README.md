@@ -1,4 +1,9 @@
+# Remind Assignment
 
-![screencapture-remindassignment-netlify-app-2021-08-11-10_05_12](https://user-images.githubusercontent.com/56472120/128970229-f0295736-20da-46cc-a6bf-2ddfcc9fc108.png)
+Generate your google calendar from vtop assignments and never forget any deadline
+
+
+![screencapture-localhost-3000-2021-10-13-21_24_44](https://user-images.githubusercontent.com/56472120/137169723-ba0ea01f-9f41-48e7-97dc-b29b91699273.png)
+
 
 https://remindassignment.netlify.app/
