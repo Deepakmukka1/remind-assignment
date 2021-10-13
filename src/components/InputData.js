@@ -72,8 +72,9 @@ const InputData = () => {
 
   return (
     <div style={{padding:'10px',marginBottom:'30px'}}>
-      <Instructions/>
       <h3><u>Vtop to Google Calendar</u></h3>
+      <p>Sync all your assignments in vtop to google calendar in minutes 🔥 </p>
+      <Instructions/>
       <h5>Total courses added : {totalCoursesCount}</h5>
       <h5 className="success">{success.length > 0 && success }</h5>
       <h5 className="error">{error.length > 0 && error }</h5>
@@ -114,7 +115,6 @@ const InputData = () => {
       >
         Reset 
       </button>
-
     </div>
   );
 };
