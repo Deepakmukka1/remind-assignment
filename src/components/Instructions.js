@@ -9,9 +9,8 @@ const Instructions = () => {
                 <li> Click on add course</li>
                 <li> Repeat step 1 and 2 for as many subjects as you wish</li>
                 <li> Click on submit to get a .ics file</li>
-                <li> Go to your google calendar and import this file</li>
-                <li><a href="https://youtu.be/j9OHpvAdoes" style={{color:'#27ae60'}} target="_blank" rel="noreferrer"> Click here to view demo</a></li>
-                
+                <li> Go to your google calendar and import this file</li><br/>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/j9OHpvAdoes" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </ol>
         </div>
     )
