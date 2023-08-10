@@ -1,0 +1,13 @@
+
+ VIT (Vellore Campus)
+User Image 19AAA0012 (STUDENT) 
+Assignment Upload
+Semester	Course Code	Course Title	Course Type	Class Number
+Winter Semester 2021-22	CBS3008	Introduction to Internet of Things	ETH	VL2021220502353
+
+Sl.No.	Title	Max. Mark	Weightage %	Due Date	QP	Document Details
+Last Updated On	Upload/Edit/Download
+1	Digital Assignment - I	10	10	25-Feb-2022		25 Feb 2022 08:06 PM
+	
+2	Digital Assignment - II	10	10	08-Apr-2022		08 Apr 2022 09:22 PM	
+
